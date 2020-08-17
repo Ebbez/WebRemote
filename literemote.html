@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebRemote</title>
+
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .block {
+      width: 100%;
+      height: 50%;
+      color: white;
+      font-size: 80px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #previous {
+      background: rgb(80, 0, 0);
+    }
+
+    #previous:hover {
+      background: rgb(60, 0, 0);
+    }
+
+    #next {
+      background: rgb(130, 0, 0);
+    }
+
+    #next:hover {
+      background: rgb(110, 0, 0);
+    }
+  </style>
+</head>
+<body>
+  <div id="next" class="block">
+    Volgende &rarr; 
+  </div>
+  <div id="previous" class="block">
+    &larr; Vorige
+  </div>
+
+  <script>
+    var fullscreen = false;
+    document.body.onclick = () => {
+      document.body.requestFullscreen();
+      document.body.onclick = null;
+    }
+
+    document.getElementById("next").onclick = () => {
+      var nextReq = new XMLHttpRequest();
+      nextReq.open("GET", "http://" + window.location.hostname + ":5223/right");
+      nextReq.send();
+    }
+
+    document.getElementById("previous").onclick = () => {
+      var nextReq = new XMLHttpRequest();
+      nextReq.open("GET", "http://" + window.location.hostname + ":5223/left");
+      nextReq.send();
+    }
+  </script>
+</body>
+</html>
