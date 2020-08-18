@@ -1,6 +1,6 @@
 {
   "name": "webremote",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A small NodeJS application meant for controlling presentations over WiFi using the HTTP protocol and the sendkeys VBA dependencies.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "pkg . -targets=node12-win-x64"
   },
   "author": "Ebbe Zeinstra",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "sendkeys": "^1.1.1"
   },
