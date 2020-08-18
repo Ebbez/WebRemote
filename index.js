@@ -32,11 +32,9 @@ if (process.argv[2] == "local") {
   }).listen(5223, () => {
     console.log("Started a WebRemote Server on this host using port 5223");
   })
-} else if (process.argv[2] == "proxy") {
-  var host = "webremote.cequention.com";
-  var port = 5224;
-  if (process.argv[3]) host = process.argv[3];
-  if (process.argv[4]) port = parseInt(process.argv[4]);
+} else {
+  var host = process.argv[2] || "webremote.cequention.com";
+  var port = parseInt(process.argv[3]) || 5224;
 
   const con = net.createConnection(port, host, () => {
     console.log("Connected to host " + host + ":" + port);
