@@ -34,7 +34,7 @@ if (process.argv[2] == "local") {
   })
 } else if (process.argv[2] == "proxy") {
   var host = "webremote.cequention.com";
-  const port = 5224;
+  var port = 5224;
   if (process.argv[3]) host = process.argv[3];
   if (process.argv[4]) port = parseInt(process.argv[4]);
 
